@@ -1,0 +1,9 @@
+.home {
+    min-height: 100vh;
+    padding: 100px 60px;
+    background: #f1efff;
+}
+
+.home h1 {
+    font-size: 48px;
+}
