@@ -1,0 +1,44 @@
+/* Navbar container */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.2rem 4rem; /* reduced padding */
+    background: rgba(255, 255, 255, 0);
+}
+
+/* Logo */
+.navbar-logo a {
+    color: #111124;
+    font-size: 2.2rem; /* reduced size */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Nav links container */
+.navbar-links {
+    display: flex;
+    list-style: none;
+}
+
+/* Individual links */
+.navbar-links li a {
+    display: inline-block;
+    margin: 0 1.2rem; /* reduced spacing */
+    color: #111124;
+    font-weight: 500; /* slightly lighter */
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.navbar-links li a:hover {
+    transform: translateY(-3px); /* softer hover */
+}

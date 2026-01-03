@@ -1,0 +1,269 @@
+/* ================= ROOT HOME ================= */
+
+.home {
+    width: 100%;
+    height: 88vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ================= BLURRED GIF BACKGROUND ================= */
+
+.home::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+
+    background-image: url("../../assets/background/bg.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(8px);
+    transform: scale(1.15);
+    z-index: 0;
+}
+
+/* ================= LIGHT OVERLAY ================= */
+
+.home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+/* Keep content above overlays */
+.home > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= GLASS CARD ================= */
+
+.home-and-image-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 3rem;
+
+    width: min(1000px, 90%);
+    padding: 3.5rem;
+    border-radius: 1.75rem;
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+            0 25px 45px rgba(0, 0, 0, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* ================= TEXT ================= */
+
+.home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-text h2 {
+    font-size: clamp(2.4rem, 3vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+    color: #1e1e24;
+}
+
+.home-text h3 {
+    position: relative;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 1.4rem;
+    padding-top: 1rem;
+}
+
+/* Centered accent line */
+.home-text h3::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1.5px;
+    background: linear-gradient(
+            to right,
+            transparent,
+            #1e1e24,
+            transparent
+    );
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.home-text p {
+    max-width: 460px;
+    margin-bottom: 2.2rem;
+    line-height: 1.7;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* ================= BUTTONS ================= */
+
+.home-btn {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    background: #1e1e24;
+    color: #ffffff;
+    border: none;
+
+    box-shadow: 0 12px 24px rgba(30, 30, 36, 0.25);
+    transition: all 0.35s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(30, 30, 36, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #1e1e24;
+    border: 1.5px solid #1e1e24;
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: #1e1e24;
+    color: #ffffff;
+}
+
+/* ================= IMAGE ================= */
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 1.25rem;
+    object-fit: cover;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.6s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.04);
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.socials-icons {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.socials-icons img {
+    width: 26px;
+    height: 26px;
+    opacity: 0.75;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socials-icons img:hover {
+    transform: translateY(-4px) scale(1.1);
+    opacity: 1;
+}
+
+/* ================= SCROLL BUTTON ================= */
+
+.scroll-btn {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #1e1e24;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-btn:hover {
+    opacity: 1;
+}
+
+/* ================= WAVE ICON ================= */
+
+.wave img {
+    width: 38px;
+    height: 38px;
+    margin-left: 8px;
+    vertical-align: middle;
+    animation: wave 1.5s infinite;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(14deg); }
+    40% { transform: rotate(-8deg); }
+    60% { transform: rotate(14deg); }
+    80% { transform: rotate(-4deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
