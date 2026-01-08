@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Update your global CSS file or add this to the top of your CSS */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+/* Every section must be exactly the height of the screen to snap correctly */
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100vh;
+  width: 100%;
+}
