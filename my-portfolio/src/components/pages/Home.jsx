@@ -64,7 +64,7 @@ export default function Home() {
                     <img src={githubIcon} alt="GitHub" />
                 </a>
             </div>
-            
+
 
             {/* CONTACT MODAL */}
             {isModalOpen && (
