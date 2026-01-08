@@ -12,6 +12,8 @@
     position: relative;
     overflow: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Apply this to .home, .about, .skills, and .projects */
+
 }
 
 /* ================= BLURRED GIF BACKGROUND ================= */
@@ -266,4 +268,158 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ================= BEAUTIFIED CONTACT MODAL ================= */
+
+.contact-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.4s ease;
+}
+
+.contact-modal {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 2rem;
+    padding: 3.5rem 2.5rem 2.5rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    animation: modalSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1e1e24;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    background: #1e1e24;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #1e1e24;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+}
+
+.modal-header p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.info-group {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(30, 30, 36, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.info-group:hover {
+    border-left-color: #1e1e24;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin-bottom: 0.4rem;
+}
+
+.info-value {
+    font-size: 1rem;
+    color: #1e1e24;
+    font-weight: 600;
+    margin: 0;
+}
+
+.info-sub {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+.modal-socials {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.modal-socials a {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #1e1e24;
+    text-decoration: none;
+    min-width: 45px; /* Ensures chips are consistent sizes */
+    text-align: center;
+    padding: 0.6rem 0.8rem;
+    border-radius: 999px;
+    background: transparent;
+    border: 1.5px solid rgba(30, 30, 36, 0.1);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal-socials a:hover {
+    background: #1e1e24;
+    color: #fff;
+    border-color: #1e1e24;
+    transform: translateY(-3px);
+}
+
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
